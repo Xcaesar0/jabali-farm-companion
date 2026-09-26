@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#062f24" />
+  <meta name="description" content="Jabali Farm Companion — مفهوم رقمي يحوّل الجبالي من مورّد منتجات إلى رفيق يومي للمزارع." />
+  <title>Jabali Farm Companion — رفيق المزارع اليومي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23062f24'/%3E%3Cpath d='M17 40c14 1 25-8 31-24 2 17-4 30-18 33-7 1-12-2-13-9Z' fill='%23cfe96b'/%3E%3Cpath d='M21 44c8-10 15-15 25-22' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <style>
+    :root{--ink:#102921;--deep:#052e23;--deep2:#0a4632;--green:#176b47;--mint:#cfead9;--lime:#d2e867;--cream:#f3efe5;--paper:#fbfaf6;--red:#d91c28;--line:rgba(13,65,47,.15);--shadow:0 30px 80px rgba(2,35,25,.16)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth;max-width:100%;overflow-x:clip} body{margin:0;max-width:100%;background:var(--paper);color:var(--ink);font-family:"Tajawal",Tahoma,Arial,sans-serif;font-size:16px;line-height:1.7;letter-spacing:0;word-spacing:normal;overflow-x:clip}
+    body::selection{background:var(--lime);color:var(--deep)} a{color:inherit;text-decoration:none} button{font:inherit}
+    .progress{position:fixed;inset:0 0 auto;z-index:100;height:3px;background:rgba(255,255,255,.08)}.progress i{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--lime),#5fbf88)}
+    .nav{position:fixed;z-index:90;top:18px;left:50%;transform:translateX(-50%);width:min(1180px,calc(100% - 32px));height:64px;border:1px solid rgba(255,255,255,.16);border-radius:20px;background:rgba(4,39,29,.72);backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:space-between;padding:0 18px;color:#fff;box-shadow:0 16px 50px rgba(0,0,0,.16)}
+    .brand{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.02em}.brand img{width:116px;height:34px;object-fit:contain;filter:brightness(0) invert(1)}
+    .navlinks{display:flex;align-items:center;gap:8px}.navlinks a{font-size:14px;padding:8px 12px;border-radius:12px;color:rgba(255,255,255,.72);transition:.25s}.navlinks a:hover{color:#fff;background:rgba(255,255,255,.09)}
+    .nav-cta,.btn{border:0;border-radius:999px;background:var(--lime);color:var(--deep);padding:10px 18px;font-weight:800;cursor:pointer;transition:transform .25s,box-shadow .25s}.nav-cta:hover,.btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(210,232,103,.22)}
+    .hero{min-height:104vh;position:relative;display:grid;place-items:center;background:radial-gradient(circle at 75% 30%,rgba(70,157,98,.36),transparent 28%),radial-gradient(circle at 15% 70%,rgba(210,232,103,.12),transparent 25%),linear-gradient(145deg,#021c16 0%,#083b2b 58%,#0f573a 100%);color:#fff;overflow:hidden;padding:130px 5vw 80px}
+    .hero::before{content:"";position:absolute;inset:0;opacity:.22;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(to bottom,#000,transparent 85%)}
+    .hero-orbit{position:absolute;width:720px;height:720px;border:1px solid rgba(210,232,103,.13);border-radius:50%;left:-180px;top:10%;box-shadow:0 0 120px rgba(70,157,98,.18) inset;transform:translate3d(0,var(--parallax,0),0)}
+    .hero-inner{position:relative;z-index:2;width:min(1180px,100%);display:grid;grid-template-columns:1.05fr .95fr;gap:6vw;align-items:center}.hero-inner>*{min-width:0}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--lime);font-size:13px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.eyebrow::before{content:"";width:32px;height:1px;background:currentColor}
+    .hero h1{font-size:clamp(3rem,6vw,6.8rem);line-height:.98;margin:24px 0 28px;letter-spacing:-.055em;max-width:760px}.hero h1 small{display:block;color:var(--lime);font-size:.24em;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}.hero p{font-size:clamp(1.1rem,1.5vw,1.35rem);color:rgba(255,255,255,.72);max-width:640px;margin:0 0 34px}.hero-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.btn.secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25)}
+    .micro{margin-top:34px;display:flex;gap:24px;color:rgba(255,255,255,.55);font-size:13px}.micro b{color:#fff;font-size:18px;display:block}
+    .phone-stage{position:relative;height:700px;display:grid;place-items:center;perspective:1200px}.phone{position:relative;width:min(330px,75vw);aspect-ratio:390/844;border:10px solid #0a1713;border-radius:48px;background:#0a1713;box-shadow:0 50px 100px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.18) inset;overflow:hidden;transform:rotateY(-8deg) rotateX(2deg);transition:transform .7s cubic-bezier(.2,.8,.2,1)}.phone:hover{transform:rotateY(0) rotateX(0) translateY(-8px)}.phone::before{content:"مرّر داخل الشاشة";position:absolute;z-index:7;top:40px;right:50%;transform:translateX(50%);padding:6px 11px;border-radius:999px;background:rgba(3,30,23,.76);color:#fff;font-size:11px;font-weight:700;white-space:nowrap;backdrop-filter:blur(8px);transition:opacity .3s}.phone.has-scrolled::before{opacity:0}.phone::after{content:"";position:absolute;z-index:6;inset:0;border-radius:38px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);pointer-events:none}.phone-scroll{position:absolute;z-index:1;inset:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:rgba(23,107,71,.5) transparent}.phone-scroll::-webkit-scrollbar{width:4px}.phone-scroll::-webkit-scrollbar-thumb{background:rgba(23,107,71,.55);border-radius:4px}.phone-scroll>img{display:block;width:100%;height:auto;object-fit:contain;object-position:top}.phone-fixed-nav{position:absolute;z-index:5;right:0;bottom:0;left:0;height:78px;overflow:hidden;background:#f4f0e8;box-shadow:0 -10px 24px rgba(4,39,29,.12);pointer-events:none}.phone-fixed-nav img{position:absolute;right:0;bottom:0;display:block;width:100%;height:auto;object-fit:contain}.notch{position:absolute;z-index:8;top:8px;left:50%;transform:translateX(-50%);width:32%;height:20px;border-radius:0 0 14px 14px;background:#08120f}
+    .float-card{position:absolute;z-index:4;min-width:174px;padding:14px 16px;border:1px solid rgba(255,255,255,.16);border-radius:18px;background:rgba(255,255,255,.1);backdrop-filter:blur(16px);box-shadow:0 16px 50px rgba(0,0,0,.18);animation:float 5s ease-in-out infinite;color:#fff}.float-card b{display:block;font-size:18px}.float-card span{font-size:12px;color:rgba(255,255,255,.62)}.float-card.one{right:-25px;top:140px}.float-card.two{left:-35px;top:260px;animation-delay:-1.2s}.float-card.three{right:-10px;bottom:115px;animation-delay:-2.4s}.float-card em{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--lime);margin-left:7px;box-shadow:0 0 16px var(--lime)}
+    @keyframes float{50%{transform:translateY(-13px)}}
+    .scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.5);font-size:12px}.scroll-cue i{width:28px;height:42px;border:1px solid rgba(255,255,255,.25);border-radius:20px;position:relative}.scroll-cue i::after{content:"";position:absolute;width:4px;height:7px;background:var(--lime);border-radius:4px;top:9px;left:11px;animation:wheel 2s infinite}@keyframes wheel{to{transform:translateY(14px);opacity:0}}
+    section{position:relative;padding:120px 5vw}.wrap{width:min(1180px,100%);margin:auto}.section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:5vw;align-items:end;margin-bottom:64px}.kicker{font-size:13px;font-weight:800;color:var(--green);letter-spacing:.12em;text-transform:uppercase}.section-head h2{font-size:clamp(2.2rem,4.4vw,4.8rem);line-height:1.08;letter-spacing:-.045em;margin:12px 0 0}.section-head p{font-size:1.12rem;color:#54685f;margin:0;max-width:650px}.dark{background:var(--deep);color:#fff}.dark .section-head p{color:rgba(255,255,255,.65)}.dark .kicker{color:var(--lime)}
+    .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.problem-card{min-height:190px;padding:26px;border:1px solid var(--line);border-radius:26px;background:#fff;display:flex;flex-direction:column;justify-content:space-between;transition:.35s;box-shadow:0 12px 30px rgba(6,52,38,.04)}.problem-card:hover{transform:translateY(-8px);border-color:rgba(23,107,71,.34);box-shadow:var(--shadow)}.problem-card .num{font-size:13px;color:#8b9a94}.problem-card h3{font-size:1.25rem;line-height:1.35;margin:28px 0 0}.problem-card i{width:38px;height:4px;border-radius:4px;background:var(--lime)}.manifesto{margin-top:44px;padding:42px;border-radius:30px;background:linear-gradient(120deg,#e6f0df,#f3efcf);font-size:clamp(1.4rem,2.3vw,2.3rem);font-weight:800;line-height:1.5}
+    .vision-stage{position:relative;min-height:500px;border-radius:38px;background:radial-gradient(circle at 50% 50%,rgba(210,232,103,.14),transparent 35%),#04291f;border:1px solid rgba(255,255,255,.1);overflow:hidden;display:grid;place-items:center;padding:50px}.vision-core{width:190px;height:190px;border-radius:50%;display:grid;place-items:center;text-align:center;background:var(--lime);color:var(--deep);font-weight:900;font-size:1.35rem;box-shadow:0 0 0 20px rgba(210,232,103,.06),0 0 90px rgba(210,232,103,.2)}.ecosystem{position:absolute;inset:0}.eco{position:absolute;padding:12px 18px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(8px);font-weight:700}.eco:nth-child(1){top:16%;right:14%}.eco:nth-child(2){top:16%;left:14%}.eco:nth-child(3){right:8%;top:48%}.eco:nth-child(4){left:8%;top:48%}.eco:nth-child(5){bottom:14%;right:22%}.eco:nth-child(6){bottom:14%;left:22%}.vision-note{text-align:center;color:rgba(255,255,255,.6);max-width:680px;margin:30px auto 0}
+    .tabs-shell{border:1px solid var(--line);background:#fff;border-radius:30px;padding:18px;box-shadow:var(--shadow)}.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.tab{border:0;background:transparent;border-radius:18px;padding:18px 12px;cursor:pointer;color:#6c7b75;transition:.25s}.tab b{display:block;color:var(--ink);font-size:1rem;margin-top:6px}.tab.active,.tab:hover{background:#e5f1e7;color:var(--green)}.tab.active b{color:var(--green)}.tab-panel{margin-top:12px;border-radius:22px;background:linear-gradient(120deg,var(--deep),var(--deep2));color:#fff;padding:30px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;min-height:130px}.tab-panel p{margin:0;color:rgba(255,255,255,.7)}.tab-panel strong{font-size:1.45rem}.tab-panel .pill{background:var(--lime);color:var(--deep);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:800}
+    .showcase{overflow:hidden}.showcase-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:8vw;align-items:center}.showcase:nth-of-type(even) .showcase-grid{grid-template-columns:1.1fr .9fr}.showcase:nth-of-type(even) .visual{order:2}.visual{position:relative;min-height:720px;display:grid;place-items:center}.visual::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,var(--glow,#dbead5),transparent 68%)}.visual .phone{width:320px;transform:none;box-shadow:0 45px 90px rgba(6,52,38,.25)}.feature-list{display:grid;gap:11px}.feature{padding:17px 18px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.74);backdrop-filter:blur(10px);display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;transition:.3s}.feature:hover{transform:translateX(-7px);border-color:rgba(23,107,71,.35);background:#fff;box-shadow:0 15px 35px rgba(6,52,38,.08)}.feature .ico{width:42px;height:42px;border-radius:13px;background:#e2f1e7;color:var(--green);display:grid;place-items:center;font-weight:900}.feature b{display:block;margin-bottom:2px}.feature span{font-size:14px;color:#687971}.showcase-copy h3{font-size:clamp(2.2rem,3.5vw,4.2rem);line-height:1.12;margin:13px 0 20px;letter-spacing:-.04em}.showcase-copy>p{font-size:1.05rem;color:#5f7069;margin-bottom:28px}.red-note{margin-top:22px;padding:18px 20px;border-right:4px solid var(--red);background:#fff;border-radius:16px;color:#41524b}
+    .flows{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.flow{position:relative;border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:28px;background:rgba(255,255,255,.055);overflow:hidden;transition:.3s}.flow:hover{background:rgba(255,255,255,.09);transform:translateY(-5px)}.flow .flow-no{position:absolute;left:20px;top:12px;font-size:70px;font-weight:900;color:rgba(255,255,255,.04)}.flow h3{font-size:1.45rem;margin:0 0 25px}.steps{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.steps span{padding:9px 12px;border-radius:12px;background:rgba(255,255,255,.09);font-size:14px}.steps i{color:var(--lime);font-style:normal}.flow-outcome{margin-top:22px;color:var(--lime);font-weight:700;font-size:14px}
+    .value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.value{border-radius:24px;padding:24px;background:#fff;border:1px solid var(--line);min-height:180px;display:flex;flex-direction:column;justify-content:space-between;transition:.3s}.value:hover{background:var(--deep);color:#fff;transform:translateY(-6px)}.value b{font-size:1.12rem}.value span{font-size:44px;font-weight:900;line-height:1;color:var(--green)}.value:hover span{color:var(--lime)}.value:nth-child(1),.value:nth-child(6){grid-column:span 2;background:#e6f1e7}.value:nth-child(1):hover,.value:nth-child(6):hover{background:var(--deep)}
+    .why{padding-top:40px}.why-box{min-height:580px;border-radius:42px;position:relative;overflow:hidden;background:radial-gradient(circle at 18% 50%,rgba(210,232,103,.22),transparent 26%),linear-gradient(120deg,#05291f,#0e6944);color:#fff;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:8vw}.why-box::after{content:"";position:absolute;width:500px;height:500px;border:1px solid rgba(255,255,255,.12);border-radius:50%;left:-160px;bottom:-240px}.why-box h2{font-size:clamp(2.7rem,5vw,5.4rem);line-height:1.03;letter-spacing:-.05em;margin:12px 0 20px}.why-box p{font-size:1.2rem;color:rgba(255,255,255,.7);max-width:600px}.why-points{display:grid;gap:14px}.why-points div{border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.07);backdrop-filter:blur(10px);border-radius:18px;padding:17px 20px}.why-points b{color:var(--lime)}
+    .closing{min-height:92vh;background:#031e17;color:#fff;display:grid;place-items:center;text-align:center;overflow:hidden}.closing::before{content:"";position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(39,137,86,.32),transparent 65%)}.closing .wrap{position:relative;z-index:1}.closing img{width:min(420px,80%);filter:brightness(0) invert(1);opacity:.8;margin-bottom:30px}.closing h2{font-size:clamp(3.2rem,7vw,7.8rem);line-height:1.12;letter-spacing:0;margin:0 auto 26px;max-width:1050px;text-wrap:balance}.closing h2 span{display:block;color:var(--lime);font-size:.33em;letter-spacing:.04em;margin-bottom:18px}.closing p{max-width:720px;margin:0 auto 30px;font-size:1.25rem;color:rgba(255,255,255,.68)}.credits{display:inline-grid;gap:4px;padding:18px 28px;border:1px solid rgba(255,255,255,.14);border-radius:22px;background:rgba(255,255,255,.06);backdrop-filter:blur(12px)}.credits span{color:var(--lime);font-size:1.15rem;font-weight:800}.credits b{color:rgba(255,255,255,.8);font-weight:500}.footer{position:absolute;bottom:24px;left:5vw;right:5vw;display:flex;justify-content:space-between;color:rgba(255,255,255,.35);font-size:12px}
+    .hero h1,.section-head h2,.showcase-copy h3,.why-box h2,.closing h2{letter-spacing:0;word-spacing:normal;text-wrap:balance}.section-head h2,.showcase-copy h3,.why-box h2{line-height:1.18}
+    .reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:none}.hero .reveal{opacity:1;transform:none;animation:heroRise .9s cubic-bezier(.2,.8,.2,1) both}.hero .delay1{animation-delay:.12s}@keyframes heroRise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}.delay1{transition-delay:.1s}.delay2{transition-delay:.2s}.delay3{transition-delay:.3s}
+    @media (max-width:900px){.navlinks{display:none}.hero{padding-top:120px}.hero-inner,.showcase-grid,.showcase:nth-of-type(even) .showcase-grid,.section-head,.why-box{grid-template-columns:1fr}.hero-copy{text-align:center}.hero p{margin-inline:auto}.hero-actions,.micro{justify-content:center}.phone-stage{height:650px}.problem-grid{grid-template-columns:repeat(2,1fr)}.section-head{gap:18px}.showcase:nth-of-type(even) .visual{order:0}.visual{min-height:670px}.value-grid{grid-template-columns:repeat(2,1fr)}.why-box{gap:42px;padding:70px 7vw}.why-points{grid-template-columns:repeat(3,1fr)}.why-points div{padding:14px}.eco:nth-child(3){right:2%}.eco:nth-child(4){left:2%}}
+    @media (max-width:620px){.nav{height:58px;top:10px}.brand span{display:none}.brand img{width:92px}.nav-cta{font-size:13px;padding:8px 12px}.hero{padding:105px 20px 70px}.hero-orbit{display:none}.hero-inner{gap:8px;width:100%}.hero-copy{width:100%;overflow:hidden}.hero h1{font-size:2.6rem;letter-spacing:0;overflow-wrap:anywhere}.hero p{font-size:1rem}.hero-actions{display:grid;grid-template-columns:1fr 1fr;width:100%;gap:8px}.hero-actions .btn{padding:10px 7px;font-size:14px}.micro{gap:12px}.micro div{font-size:11px}.phone-stage{height:520px;width:100%;max-width:100%}.phone-stage .phone{width:255px;transform:none}.float-card{min-width:140px;padding:10px 12px}.float-card b{font-size:14px}.float-card.one{right:0}.float-card.two{left:0}.float-card.three{right:0}.scroll-cue{display:none}section{padding:84px 20px}.problem-grid,.flows,.value-grid{grid-template-columns:1fr}.problem-card{min-height:150px}.tabs{overflow:auto;display:flex;padding-bottom:6px}.tab{min-width:105px}.tab-panel{grid-template-columns:1fr}.vision-stage{min-height:590px;padding:30px}.vision-core{width:150px;height:150px}.eco{font-size:13px}.eco:nth-child(1){top:12%;right:5%}.eco:nth-child(2){top:12%;left:5%}.eco:nth-child(3){right:2%;top:42%}.eco:nth-child(4){left:2%;top:42%}.eco:nth-child(5){bottom:14%;right:8%}.eco:nth-child(6){bottom:14%;left:8%}.visual{min-height:590px}.visual .phone{width:260px;border-radius:40px}.phone-fixed-nav{height:64px}.feature{grid-template-columns:36px 1fr;padding:15px}.feature .ico{width:36px;height:36px}.value:nth-child(1),.value:nth-child(6){grid-column:auto}.why-box{padding:58px 26px}.why-points{grid-template-columns:1fr}.closing{padding-inline:20px}.credits{padding:16px 18px}.footer{flex-direction:column;gap:4px}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none}.float-card,.scroll-cue i::after{animation:none}.phone{transition:none}}
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><i></i></div>
+  <nav class="nav" aria-label="التنقل الرئيسي">
+    <a class="brand" href="#top"><img src="assets/jabali-logo.png" alt="الجبالي" /><span>FARM COMPANION</span></a>
+    <div class="navlinks"><a href="#vision">الفكرة</a><a href="#structure">هيكل التطبيق</a><a href="#experience">التجربة</a><a href="#value">القيمة</a></div>
+    <a class="nav-cta" href="#closing">المرحلة التالية</a>
+  </nav>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-orbit" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Product Vision · 2026</span>
+          <h1><small>Jabali Farm Companion</small>رفيق المزارع اليومي من الجبالي</h1>
+          <p>تجربة رقمية تساعد المزارع على إدارة مزارعه، متابعة الصيانة، اختيار منتجات الجبالي المناسبة، وتحويل كل عملية شراء إلى قيمة مستمرة.</p>
+          <div class="hero-actions"><a class="btn" href="#vision">اكتشف الفكرة</a><a class="btn secondary" href="#experience">استعرض التجربة</a></div>
+          <div class="micro"><div><b>5</b>مساحات رئيسية</div><div><b>4</b>رحلات أساسية</div><div><b>1</b>شريك يومي</div></div>
+        </div>
+        <div class="phone-stage reveal delay1">
+          <div class="phone"><span class="notch"></span><img src="assets/home.png" alt="شاشة الرئيسية في تطبيق رفيق المزارع" /></div>
+          <div class="float-card one"><span><em></em>حالة اليوم</span><b>جاهزية المزرعة 84%</b></div>
+          <div class="float-card two"><span>أولوية اليوم</span><b>فحص برابيش الري</b></div>
+          <div class="float-card three"><span>نقاط الجبالي</span><b>2,450 نقطة</b></div>
+        </div>
+      </div>
+      <div class="scroll-cue"><i></i><span>مرّر لاكتشاف القصة</span></div>
+    </section>
+
+    <section id="challenge">
+      <div class="wrap">
+        <header class="section-head reveal"><div><span class="kicker">01 · التحدي</span><h2>يوم المزارع مليء بالتفاصيل المتناثرة.</h2></div><p>بين المزارع، الصيانة، الحصاد، والشراء، تضيع القرارات المهمة داخل ملاحظات ورسائل ومواعيد منفصلة.</p></header>
+        <div class="problem-grid">
+          <article class="problem-card reveal"><span class="num">01</span><h3>إدارة أكثر من مزرعة ضمن الحساب نفسه</h3><i></i></article>
+          <article class="problem-card reveal delay1"><span class="num">02</span><h3>تذكّر مواعيد الصيانة والفحص</h3><i></i></article>
+          <article class="problem-card reveal delay2"><span class="num">03</span><h3>اختيار المنتج المناسب في الوقت المناسب</h3><i></i></article>
+          <article class="problem-card reveal"><span class="num">04</span><h3>التحضير للحصاد والتغليف</h3><i></i></article>
+          <article class="problem-card reveal delay1"><span class="num">05</span><h3>إعادة الطلب والتواصل مع الشركة</h3><i></i></article>
+          <article class="problem-card reveal delay2"><span class="num">06</span><h3>غياب نظام ولاء واضح وعملي</h3><i></i></article>
+        </div>
+        <div class="manifesto reveal">المزارع لا يحتاج تطبيقاً معقداً، بل مساعداً بسيطاً يعرف مزرعته ويقترح عليه ما يجب فعله في الوقت المناسب.</div>
+      </div>
+    </section>
+
+    <section class="dark" id="vision">
+      <div class="wrap">
+        <header class="section-head reveal"><div><span class="kicker">02 · الفكرة</span><h2>من مورّد منتجات إلى شريك رقمي يومي.</h2></div><p>تطبيق واحد يجمع إدارة المزرعة، المنتجات، الصيانة، المتجر والمكافآت ضمن تجربة عملية لا تعقّد عمل المزارع.</p></header>
+        <div class="vision-stage reveal">
+          <div class="vision-core">Jabali<br/>Companion</div>
+          <div class="ecosystem" aria-label="منظومة المنتج"><span class="eco">المزارع</span><span class="eco">المزرعة</span><span class="eco">منتجات الجبالي</span><span class="eco">الصيانة</span><span class="eco">المتجر</span><span class="eco">المكافآت</span></div>
+        </div>
+        <p class="vision-note reveal">كل إشارة داخل التطبيق تقود إلى قرار أو خدمة أو قيمة واضحة — من معرفة ما يجب فعله اليوم إلى اختيار المنتج وطلب الدعم.</p>
+      </div>
+    </section>
+
+    <section id="structure">
+      <div class="wrap">
+        <header class="section-head reveal"><div><span class="kicker">03 · هيكل التطبيق</span><h2>خمس مساحات. تجربة واحدة متصلة.</h2></div><p>هيكل مألوف وبسيط يضع القرارات اليومية أولاً، ويحافظ على الوصول السريع إلى كل ما يخص المزرعة.</p></header>
+        <div class="tabs-shell reveal">
+          <div class="tabs" role="tablist" aria-label="أقسام التطبيق">
+            <button class="tab active" role="tab" aria-selected="true" data-title="الرئيسية" data-copy="ملخص يومي يجمع الجاهزية، الأولويات، الإجراءات السريعة، ومرحلة المحصول.">⌂<b>الرئيسية</b></button>
+            <button class="tab" role="tab" aria-selected="false" data-title="مزرعتي" data-copy="ملفات المزارع والمنتجات المستخدمة والصيانة القادمة في مكان واحد.">♧<b>مزرعتي</b></button>
+            <button class="tab" role="tab" aria-selected="false" data-title="المتجر" data-copy="اكتشاف المنتجات المناسبة وطلب عرض سعر حسب المزرعة والموسم.">▣<b>المتجر</b></button>
+            <button class="tab" role="tab" aria-selected="false" data-title="المكافآت" data-copy="رصيد النقاط والمزايا العملية والتقدم نحو المكافأة التالية.">✦<b>المكافآت</b></button>
+            <button class="tab" role="tab" aria-selected="false" data-title="المزيد" data-copy="الدعم والإعدادات والخدمات الإضافية دون ازدحام المساحات الرئيسية.">•••<b>المزيد</b></button>
+          </div>
+          <div class="tab-panel" aria-live="polite"><div><strong id="tab-title">الرئيسية</strong><p id="tab-copy">ملخص يومي يجمع الجاهزية، الأولويات، الإجراءات السريعة، ومرحلة المحصول.</p></div><span class="pill">مساحة قرار يومية</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div id="experience">
+      <section class="showcase">
+        <div class="wrap showcase-grid">
+          <div class="visual reveal" style="--glow:#d6ead7"><div class="phone"><span class="notch"></span><img src="assets/home.png" alt="واجهة الرئيسية" loading="lazy" /></div></div>
+          <div class="showcase-copy reveal delay1"><span class="kicker">04 · الرئيسية</span><h3>كل ما يحتاجه المزارع اليوم، في شاشة واحدة.</h3><p>لوحة يومية حية تترجم بيانات المزرعة إلى أولويات واضحة وإجراءات قابلة للتنفيذ.</p><div class="feature-list">
+            <div class="feature"><span class="ico">01</span><div><b>مبدّل المزارع</b><span>التنقل بين المزارع داخل الحساب نفسه.</span></div></div>
+            <div class="feature"><span class="ico">02</span><div><b>أولوية اليوم</b><span>أهم إجراء يستحق الانتباه الآن.</span></div></div>
+            <div class="feature"><span class="ico">03</span><div><b>جاهزية المزرعة</b><span>قراءة سريعة للحالة العامة والصيانة.</span></div></div>
+            <div class="feature"><span class="ico">04</span><div><b>مرحلة المحصول</b><span>المرحلة الحالية والاستعداد للحصاد.</span></div></div>
+            <div class="feature"><span class="ico">05</span><div><b>توصية الجبالي</b><span>منتج أو خدمة مرتبطة بالسياق الحقيقي.</span></div></div>
+          </div></div>
+        </div>
+      </section>
+
+      <section class="showcase" style="background:#edf3ea">
+        <div class="wrap showcase-grid">
+          <div class="visual reveal" style="--glow:#cfe4d4"><div class="phone"><span class="notch"></span><img src="assets/farm.png" alt="واجهة مزرعتي" loading="lazy" /></div></div>
+          <div class="showcase-copy reveal delay1"><span class="kicker">05 · مزرعتي</span><h3>لكل مزرعة ملفها الخاص. وكلها ضمن حساب واحد.</h3><p>ملف عملي يجمع ما يستخدمه المزارع وما يحتاج متابعته، بدون تحويل التجربة إلى نظام إدارة زراعية معقد.</p><div class="feature-list">
+            <div class="feature"><span class="ico">↔</span><div><b>مبدّل المزارع</b><span>سياق مستقل لكل مزرعة.</span></div></div>
+            <div class="feature"><span class="ico">◎</span><div><b>ملف المزرعة المختارة</b><span>الموقع والمحصول والجاهزية.</span></div></div>
+            <div class="feature"><span class="ico">▦</span><div><b>المنتجات المستخدمة</b><span>حالة المنتجات وموعد المتابعة.</span></div></div>
+            <div class="feature"><span class="ico">◷</span><div><b>الصيانة القادمة</b><span>جدول واضح وأولوية مرئية.</span></div></div>
+            <div class="feature"><span class="ico">+</span><div><b>إجراءات ونشاطات</b><span>رفع صورة، طلب دعم، وتسجيل المتابعة.</span></div></div>
+          </div><div class="red-note">الهدف ليس إضافة عبء إداري؛ بل بناء ذاكرة عملية للمزرعة تساعد المزارع على التذكّر واتخاذ القرار.</div></div>
+        </div>
+      </section>
+
+      <section class="showcase">
+        <div class="wrap showcase-grid">
+          <div class="visual reveal" style="--glow:#e7e6bd"><div class="phone"><span class="notch"></span><img src="assets/store.png" alt="واجهة متجر الجبالي" loading="lazy" /></div></div>
+          <div class="showcase-copy reveal delay1"><span class="kicker">06 · المتجر</span><h3>متجر ذكي لاختيار منتجات الجبالي المناسبة للمزرعة.</h3><p>تجربة اكتشاف وطلب عرض سعر، وليست متجراً إلكترونياً عاماً. المنتجات تظهر حسب السياق الزراعي.</p><div class="feature-list">
+            <div class="feature"><span class="ico">⌕</span><div><b>بحث وأقسام واضحة</b><span>الوصول السريع إلى المنتج أو الخدمة.</span></div></div>
+            <div class="feature"><span class="ico">✦</span><div><b>موصى به لمزرعتك</b><span>خيارات مرتبطة بمرحلة المحصول.</span></div></div>
+            <div class="feature"><span class="ico">☼</span><div><b>منتجات الموسم</b><span>مقترحات تراعي الطقس والتوقيت.</span></div></div>
+            <div class="feature"><span class="ico">↗</span><div><b>طلب عرض سعر</b><span>تحويل الاهتمام إلى فرصة مبيعات واضحة.</span></div></div>
+          </div><div class="red-note">بدلاً من عرض منتجات عشوائية، يربط المتجر المنتج بحالة المزرعة والموسم ومرحلة المحصول.</div></div>
+        </div>
+      </section>
+
+      <section class="showcase" style="background:#edf3ea">
+        <div class="wrap showcase-grid">
+          <div class="visual reveal" style="--glow:#dbe7c0"><div class="phone"><span class="notch"></span><img src="assets/rewards.png" alt="واجهة مكافآت الجبالي" loading="lazy" /></div></div>
+          <div class="showcase-copy reveal delay1"><span class="kicker">07 · المكافآت</span><h3>كل عملية شراء أو خدمة تتحول إلى قيمة للمزارع.</h3><p>ولاء عملي يربط النقاط بمنافع زراعية حقيقية، بعيداً عن تجربة الألعاب والمكافآت الشكلية.</p><div class="feature-list">
+            <div class="feature"><span class="ico">◉</span><div><b>رصيد نقاط الجبالي</b><span>قيمة واضحة وتقدم مرئي.</span></div></div>
+            <div class="feature"><span class="ico">↗</span><div><b>المستوى التالي</b><span>طريق مفهوم نحو مزايا أكبر.</span></div></div>
+            <div class="feature"><span class="ico">◈</span><div><b>مكافآت مفيدة</b><span>توصيل، صيانة، خصومات، عينات ودعم.</span></div></div>
+            <div class="feature"><span class="ico">+</span><div><b>طرق كسب النقاط</b><span>شراء المنتجات وطلب الخدمات والإحالات.</span></div></div>
+          </div></div>
+        </div>
+      </section>
+    </div>
+
+    <section class="dark" id="flows">
+      <div class="wrap">
+        <header class="section-head reveal"><div><span class="kicker">08 · كيف يعمل التطبيق؟</span><h2>رحلات قصيرة. نتائج مباشرة.</h2></div><p>كل رحلة تبدأ بإشارة واضحة وتنتهي بإجراء يفيد المزارع ويفتح نقطة تواصل ذات قيمة للجبالي.</p></header>
+        <div class="flows">
+          <article class="flow reveal"><span class="flow-no">01</span><h3>اختيار المزرعة</h3><div class="steps"><span>فتح التطبيق</span><i>←</i><span>اختيار المزرعة</span><i>←</i><span>سياق مخصص</span></div><div class="flow-outcome">بيانات وتوصيات خاصة بكل مزرعة</div></article>
+          <article class="flow reveal delay1"><span class="flow-no">02</span><h3>تنبيه الصيانة</h3><div class="steps"><span>تنبيه الفحص</span><i>←</i><span>مراجعة التفاصيل</span><i>←</i><span>دعم أو إكمال</span></div><div class="flow-outcome">صيانة في وقتها ووقت تعطل أقل</div></article>
+          <article class="flow reveal"><span class="flow-no">03</span><h3>توصية المنتج</h3><div class="steps"><span>مرحلة المحصول</span><i>←</i><span>منتج مناسب</span><i>←</i><span>عرض سعر</span></div><div class="flow-outcome">اقتراح مرتبط بحاجة حقيقية</div></article>
+          <article class="flow reveal delay1"><span class="flow-no">04</span><h3>كسب النقاط</h3><div class="steps"><span>شراء أو فاتورة</span><i>←</i><span>إضافة نقاط</span><i>←</i><span>مكافأة مفيدة</span></div><div class="flow-outcome">قيمة مستمرة تعزّز العودة</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="value">
+      <div class="wrap">
+        <header class="section-head reveal"><div><span class="kicker">09 · القيمة للجبالي</span><h2>علاقة مستمرة، لا تنتهي عند البيع.</h2></div><p>التطبيق يربط المعرفة بالطلب والخدمة والولاء، ويحوّل نقاط التفاعل اليومية إلى رؤية أوضح وفرص نمو أفضل.</p></header>
+        <div class="value-grid">
+          <article class="value reveal"><span>01</span><b>زيادة تكرار الشراء</b></article><article class="value reveal delay1"><span>02</span><b>فهم الاحتياجات حسب الموسم</b></article><article class="value reveal delay2"><span>03</span><b>تعزيز الولاء</b></article><article class="value reveal"><span>04</span><b>تحويل المنتجات إلى خدمات مستمرة</b></article><article class="value reveal delay1"><span>05</span><b>دعم فريق المبيعات</b></article><article class="value reveal delay2"><span>06</span><b>تقوية العلاقة مع العملاء</b></article><article class="value reveal"><span>07</span><b>بيانات مفيدة عن الاستخدام والطلب</b></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" id="why">
+      <div class="wrap why-box reveal">
+        <div><span class="kicker">10 · لماذا الآن؟</span><h2>لأن البساطة أصبحت ميزة تنافسية.</h2><p>المزارع يحتاج أداة رقمية توفر الوقت، تذكّره بما يهم، وتساعده على اختيار المنتج الصحيح بدون تعقيد.</p></div>
+        <div class="why-points"><div><b>قبل البيع</b><br/>توصية مرتبطة بحاجة فعلية.</div><div><b>أثناء الاستخدام</b><br/>متابعة وصيانة ودعم.</div><div><b>بعد الشراء</b><br/>نقاط ومزايا تعيد القيمة.</div></div>
+      </div>
+    </section>
+
+    <section class="closing" id="closing">
+      <div class="wrap reveal"><img src="assets/jabali-logo.png" alt="مؤسسة الجبالي الصناعية" /><h2><span>Jabali Farm Companion</span>من منتج زراعي إلى تجربة رقمية متكاملة.</h2><p>تخدم المزارع في يومه، وتدعم نمو الجبالي عبر علاقة أكثر قرباً وذكاءً واستمرارية.</p><div class="credits"><span>شكراً لمشاهدة العرض كاملاً</span><b>تم إعداد هذا العرض بواسطة UPTOMEDIA Company — اب تو ميديا</b></div></div>
+      <footer class="footer"><span>Concept Presentation · Jabali Farm Companion</span><span>تصور منتج أولي — قابل للتطوير والاختبار</span></footer>
+    </section>
+  </main>
+  <script>
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reveal = document.querySelectorAll('.reveal');
+    if(reduce){reveal.forEach(el=>el.classList.add('in'))}else{
+      const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');observer.unobserve(e.target)}}),{threshold:.12});
+      reveal.forEach(el=>observer.observe(el));
+    }
+    const bar=document.querySelector('.progress i');
+    addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;bar.style.width=(scrollY/max*100)+'%';if(!reduce)document.querySelector('.hero-orbit').style.setProperty('--parallax',(scrollY*.12)+'px')},{passive:true});
+    document.querySelectorAll('.phone').forEach(phone=>{
+      const image=phone.querySelector(':scope > img');
+      if(!image)return;
+      const screen=document.createElement('div');
+      screen.className='phone-scroll';
+      screen.tabIndex=0;
+      screen.setAttribute('role','region');
+      screen.setAttribute('aria-label','شاشة تطبيق قابلة للتمرير');
+      image.before(screen);
+      screen.append(image);
+      const fixedNav=document.createElement('div');
+      fixedNav.className='phone-fixed-nav';
+      fixedNav.setAttribute('aria-hidden','true');
+      const navImage=image.cloneNode(false);
+      navImage.alt='';
+      navImage.removeAttribute('loading');
+      fixedNav.append(navImage);
+      phone.append(fixedNav);
+      screen.addEventListener('scroll',()=>phone.classList.add('has-scrolled'),{once:true,passive:true});
+    });
+    document.querySelectorAll('.tab').forEach(tab=>tab.addEventListener('click',()=>{
+      document.querySelectorAll('.tab').forEach(t=>{t.classList.remove('active');t.setAttribute('aria-selected','false')});tab.classList.add('active');tab.setAttribute('aria-selected','true');
+      document.getElementById('tab-title').textContent=tab.dataset.title;document.getElementById('tab-copy').textContent=tab.dataset.copy;
+    }));
+  </script>
+</body>
+</html>
+
